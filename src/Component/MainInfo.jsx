@@ -25,14 +25,16 @@ function MainInfo() {
     }, [mealid]); // Only run the effect when mealid changes
 
     return (
-        <div>
+        <>
             {error ? (
                 <p>Error: {error}</p>
             ) : mealData ? (
                 <div className='mealInfo'>
                     <img src={mealData.strMealThumb} alt="" />
                     <div className="info">
-                    <h1>{mealData.strMeal}</h1>
+                        <h1>Recipe Detail</h1>
+                        <button>{mealData.strMeal}</button>
+                        <h3>Instruction's</h3>
                     <p>{mealData.strInstructions}</p>
                     {/* Add more meal details as needed */}
                 </div>
@@ -40,7 +42,7 @@ function MainInfo() {
             ) : (
                 <p>Loading...</p>
             )}
-        </div>
+        </>
     );
 }
 
